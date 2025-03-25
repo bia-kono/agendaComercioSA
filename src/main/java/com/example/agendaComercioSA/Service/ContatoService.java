@@ -1,10 +1,10 @@
 package com.example.agendaComercioSA.Service;
 
-import com.example.agendaComercioSA.Model.Cliente;
 import com.example.agendaComercioSA.Model.Contato;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+
 @Service
 public interface ContatoService {
 
@@ -15,8 +15,9 @@ public interface ContatoService {
     Contato editarContato(Contato contato);
 
     //Excluir
-    Contato excluirContato(Contato contato);
+    Contato excluirContato(int id);
 
     //Listar
-    List<Contato> listarContatoPorCliente(Cliente cliente);
+    List<Contato> buscarContatoPorCliente(Integer clienteId);
+
 }

@@ -50,7 +50,7 @@ public class ClienteController {
     }
 
     //Buscar clientes
-    @GetMapping("/buscarCliente")
+    @GetMapping("/pesquisarPorCliente")
     public List<Cliente> buscarClienteNomeCpf(@RequestParam("buscarCliente") String buscarCliente) {
         return clienteService.buscarClienteNomeCpf(buscarCliente);
     }

@@ -4,6 +4,7 @@ import com.example.agendaComercioSA.Model.Cliente;
 import com.example.agendaComercioSA.Repository.ClienteRepository;
 import com.example.agendaComercioSA.Service.ClienteService;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -15,6 +16,7 @@ import java.util.Optional;
 
 public class ClienteServiceImpl implements ClienteService {
 
+    @Autowired
     private ClienteRepository clienteRepository;
 
     @Override

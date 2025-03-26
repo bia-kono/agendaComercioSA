@@ -74,7 +74,7 @@ INSERT INTO contato (cliente_id, tipo, valor, observacao) VALUES
 2. Instale o MySQL e inicie o servidor. Se estiver usando o XAMPP, lembre-se de iniciar o MySQL.
 3. Verifique as configurações do banco de dados no arquivo `application.properties`:
    ```properties
-   spring.datasource.url=jdbc:mysql://localhost:3306/muralis
+   spring.datasource.url=jdbc:mysql://localhost:3307/bancoAgendaComercioSA
    spring.datasource.username=root
    spring.datasource.password=senha_aqui
    spring.jpa.hibernate.ddl-auto=update

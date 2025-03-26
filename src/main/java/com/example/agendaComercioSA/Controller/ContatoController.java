@@ -33,18 +33,18 @@ public class ContatoController {
     }
 
     //Excluir Contato
-    @DeleteMapping("/excluirContato/{id}")
-    public ResponseEntity<String> excluirContato(@PathVariable int id) {
+    @DeleteMapping("/excluirContatos/{clienteId}")
+    public ResponseEntity<String> excluirContatosPorCliente(@PathVariable Integer clienteId) {
         try {
-            contatoService.excluirContato(id);
-            return ResponseEntity.ok("Contato excluído com sucesso!");
+            contatoService.excluirContatosPorCliente(clienteId);
+            return ResponseEntity.ok("Todos os contatos do cliente " + clienteId + " foram excluídos com sucesso!");
         } catch (RuntimeException e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
         }
     }
 
     //Listar clientes
-    @GetMapping("/buscarContatos")
+    @GetMapping("/buscarContatos/{clienteid}")
     public List<Contato> buscarContatoPorCliente(@RequestParam("clienteId") Integer clienteId) {
         return contatoService.buscarContatoPorCliente(clienteId);
     }

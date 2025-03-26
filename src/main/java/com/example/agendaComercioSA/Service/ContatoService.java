@@ -15,9 +15,9 @@ public interface ContatoService {
     Contato editarContato(Contato contato);
 
     //Excluir
-    Contato excluirContato(int id);
+    void excluirContatosPorCliente(Integer clienteId);
 
-    //Listar
+    //Excluir
     List<Contato> buscarContatoPorCliente(Integer clienteId);
 
 }

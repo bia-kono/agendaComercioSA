@@ -41,15 +41,13 @@ public class ContatoServiceImpl implements ContatoService {
     }
 
     @Override
-    public Contato excluirContato(int id) {
-        Optional<Contato> contatoExistente = contatoRepository.findById(id);
+    public void excluirContatosPorCliente(Integer clienteId) {
+        List<Contato> contatos = contatoRepository.buscarContatoPorCliente(clienteId);
 
-        if (contatoExistente.isPresent()) {
-            contatoRepository.delete(contatoExistente.get());
-            return contatoExistente.get();
-        } else {
-            throw new RuntimeException("Contato não encontrado! Tente novamente.");
+        if (contatos.isEmpty()) {
+            throw new RuntimeException("Nenhum contato encontrado para o cliente " + clienteId);
         }
+        contatoRepository.deleteAll(contatos);
     }
 
     @Override
